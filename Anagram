@@ -1,0 +1,13 @@
+class Anagram:
+   def groupAnagrams(self, l):
+      result = {}
+      for i in l:
+         x = "".join(sorted(i))
+         if x in result:
+            result[x].append(i)
+         else:
+            result[x] = [i]
+      return list(result.values())
+l = input().split()
+a = Anagram()
+print(a.groupAnagrams(l))
